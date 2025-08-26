@@ -1,17 +1,15 @@
 {
-  "name": "hello-libp2p",
+  "name": "hello-p2p",
   "version": "0.0.1",
-  "main": "index.js",
+  "module": "index.ts",
   "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "bun run src/1-dht.ts",
+    "dht": "bun run src/1-dht.ts",
+    "relay": "bun run src/relay.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "description": "",
-    "dependencies": {
+  "dependencies": {
     "@chainsafe/libp2p-noise": "^16.1.4",
     "@chainsafe/libp2p-yamux": "^7.0.4",
     "@libp2p/bootstrap": "^11.0.47",
@@ -26,5 +24,11 @@
     "install": "^0.13.0",
     "libp2p": "^2.10.0",
     "ms": "3.0.0-canary.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
   }
 }
